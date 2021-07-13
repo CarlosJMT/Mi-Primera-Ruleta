@@ -33,3 +33,9 @@ El Width especifica la anchura del area de contenido de un elemento. El área de
 h1 {
 	text-align: center;
 }
+
+canvas{
+	margin-top: 10px;
+	position: relative;
+	z-index: 1;
+}
