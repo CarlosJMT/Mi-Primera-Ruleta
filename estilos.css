@@ -1,4 +1,5 @@
-*{
+/*El * significa "todos los elementos"*/
+*{ 
 	margin: 0;
 	padding: 0;
 }
