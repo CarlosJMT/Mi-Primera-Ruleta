@@ -22,3 +22,10 @@ El Width especifica la anchura del area de contenido de un elemento. El área de
 	color: #fff;
 	font-family: sans-serif;
 }
+
+.colaboradores{
+	margin-top: 28px;
+	text-align: center;
+	margin: auto;
+	position: relative;
+}
