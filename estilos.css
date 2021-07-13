@@ -9,3 +9,8 @@ body{
 	height: 100%;
 	background: #1a4a86;
 }
+
+.contenedor{
+	padding: 10px;
+	width: 980px;
+}
