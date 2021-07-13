@@ -39,3 +39,8 @@ canvas{
 	position: relative;
 	z-index: 1;
 }
+
+button{
+	position: relative;
+	padding: 10px 20px;
+}
