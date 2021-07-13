@@ -16,4 +16,9 @@ El Width especifica la anchura del area de contenido de un elemento. El área de
 .contenedor{
 	padding: 10px;
 	width: 980px;
+	max-width: calc(100% - 20px);
+	margin: auto;
+	margin-top: 50px;
+	color: #fff;
+	font-family: sans-serif;
 }
