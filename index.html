@@ -25,6 +25,14 @@
 		let canvas=document.getElementById("idcanvas");
 		let context=canvas.width/2;
 		
+		for (var i = 0 < array_colaboradores.legth; i++) {
+			context.beginPath();
+			contextmoveTo(center,center);
+			context.arc(center,center,center-20,i*2*Math.PI/array_colaboradores.legth,(i+1)*2*Math.PI/array_colaboradores.legth);
+			context.lineTo(center,center);
+			context.fillStyle=random_color();
+			context.fill();
+		}
 	</script>
 </body>
 </html>
