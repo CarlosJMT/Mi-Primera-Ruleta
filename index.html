@@ -30,8 +30,20 @@
 			contextmoveTo(center,center);
 			context.arc(center,center,center-20,i*2*Math.PI/array_colaboradores.legth,(i+1)*2*Math.PI/array_colaboradores.legth);
 			context.lineTo(center,center);
-			context.fillStyle=random_color();
+			context.fillStyle=colores();
 			context.fill();
+		}
+
+		function colores(){
+			let ar_digit=['2','3','4','5','6','7','8','9'];
+			let color='';
+			let i=0;
+			while(i<6){
+				let pos=Math.round(Math.random()*ar_digit.length-1);
+				color=color+''+ar_digit[post];
+				i++;
+			}
+			return '#'+color;
 		}
 	</script>
 </body>
