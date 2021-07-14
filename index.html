@@ -51,6 +51,17 @@
 			context.lineTo(center,center);
 			context.fillStyle=random_color();
 			context.fill();
+
+			//Escribimos los nombres de las personas dentro de la ruleta
+			context.save();
+			context.translate(center,center);
+			context.rotate(3*2*Math.PI/(5*array_colaboradores.length)+i*2*Math.PI/array_colaboradores.length);
+			context.translate(-center,-center);
+			context.font="13px Sans Serif";
+			context.texAlign="right";
+			context.fillStyle="white";
+			context.fillText(array_colaboradores[i],canvas.width-30,center);
+			context.restore();
 		}
 
 		function random_color(){
