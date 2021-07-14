@@ -43,7 +43,7 @@ canvas{
 button{
 	position: relative;
 	padding: 10px 20px;
-	font-size: 10px;
+	font-size: 18px;
 	background: #bf780f;
 	color: #fff;
 	border-style: none;
@@ -58,4 +58,8 @@ button{
 	background: red;
 	width: 60px;
 	height: 20px;
+	top: 50%;
+	right: 18%;
+	z-index: 10;
+	box-shadow: 0 0 3px #33333399;
 }
