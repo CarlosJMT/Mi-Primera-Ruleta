@@ -15,32 +15,51 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		const array_colaboradores=[
+		const array_colaboradores=
+		[
 		'Carlos Jose Mera Ticona',
 		'Carlos Alberto Mera Ticona',
 		'Alex Percy Ordaya Flores',
 		'Alex Cesar Taquila Camasca',
-		'Rodrigo Sebastian Rea Barreto'
+		'Carlos Jose Mera Ticona',
+		'Rodrigo Sebastian Rea Barreto',
+		'Nombre Desconocido 1',
+		'Nombre Desconocido 2',
+		'Nombre Desconocido 3',
+		'Nombre Desconocido 4',
+		'Nombre Desconocido 5',
+		'Nombre Desconocido 6',
+		'Nombre Desconocido 7',
+		'Nombre Desconocido 8',
+		'Nombre Desconocido 9',
+		'Nombre Desconocido 10',
+		'Nombre Desconocido 11',
+		'Nombre Desconocido 12',
+		'Nombre Desconocido 13',
+		'Nombre Desconocido 14', 
+		'Nombre Desconocido 15',
+		'Nombre Desconocido 16'
 		]; 
 		let canvas=document.getElementById("idcanvas");
-		let context=canvas.width/2;
+		let context=canvas.getContext("2d");
+		let center=canvas.width/2;
 		
-		for (var i = 0 < array_colaboradores.legth; i++) {
+		for (var i = 0; i < array_colaboradores.length; i++) {
 			context.beginPath();
-			contextmoveTo(center,center);
-			context.arc(center,center,center-20,i*2*Math.PI/array_colaboradores.legth,(i+1)*2*Math.PI/array_colaboradores.legth);
+			context.moveTo(center,center);
+			context.arc(center,center,center-20,i*2*Math.PI/array_colaboradores.length,(i+1)*2*Math.PI/array_colaboradores.length);
 			context.lineTo(center,center);
-			context.fillStyle=colores();
+			context.fillStyle=random_color();
 			context.fill();
 		}
 
-		function colores(){
+		function random_color(){
 			let ar_digit=['2','3','4','5','6','7','8','9'];
 			let color='';
 			let i=0;
 			while(i<6){
 				let pos=Math.round(Math.random()*ar_digit.length-1);
-				color=color+''+ar_digit[post];
+				color=color+''+ar_digit[pos];
 				i++;
 			}
 			return '#'+color;
