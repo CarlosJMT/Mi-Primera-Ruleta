@@ -10,7 +10,7 @@
 		<div class="colaboradores">
 			<canvas id="idcanvas" width="600" height="600"></canvas>
 			<br>
-			<button onclick=""><span id="">Sortear</span></button>
+			<button onclick="sortear();"><span id="idEstado">Sortear</span></button>
 			<div class="mark-winner"></div>
 		</div>
 	</div>
@@ -70,6 +70,25 @@
 			context.fillStyle="white";
 			context.fillText(array_colaboradores[i],canvas.width-30,center);
 			context.restore();
+		}
+
+		let pos_ini=0;
+		let clic=0;
+		let movement;
+		function sortear(){
+			if (clic==0) {
+				let canvas=document.getElementById("idcanvas");
+				movement=setInterval(function(){
+					pos_ini+=10;
+					canvas.style.transform='rotate('+pos_ini+'deg)';
+				},10);
+				clic=1;
+				document.getElementById("idEstado")="Sortear";
+			}else{
+				clear(movement);
+				clic=0;
+				document.getElementById("idEstado")="Sortear";
+			}
 		}
 
 		function random_color(){
