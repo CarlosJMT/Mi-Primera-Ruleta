@@ -72,6 +72,25 @@
 			context.restore();
 		}
 
+		let pos_ini=0;
+		let clic=0;
+		let movement;
+		function sortear(){
+			if (clic==0) {
+				let canvas=document.getElementById("idcanvas");
+				movement=setInterval(function(){
+					pos_ini+=10;
+					canvas.style.transform='rotate('+pos_ini+'deg)';
+				},10);
+				clic=1;
+				document.getElementById("idEstado")="Sortear";
+			}else{
+				clear(movement);
+				clic=0;
+				document.getElementById("idEstado")="Sortear";
+			}
+		}
+
 		function random_color(){
 			let ar_digit=['2','3','4','5','6','7','8','9'];
 			let color='';
