@@ -22,23 +22,7 @@
 		'Alex Percy Ordaya Flores',
 		'Alex Cesar Taquila Camasca',
 		'Carlos Jose Mera Ticona',
-		'Rodrigo Sebastian Rea Barreto',
-		'Nombre Desconocido 1',
-		'Nombre Desconocido 2',
-		'Nombre Desconocido 3',
-		'Nombre Desconocido 4',
-		'Nombre Desconocido 5',
-		'Nombre Desconocido 6',
-		'Nombre Desconocido 7',
-		'Nombre Desconocido 8',
-		'Nombre Desconocido 9',
-		'Nombre Desconocido 10',
-		'Nombre Desconocido 11',
-		'Nombre Desconocido 12',
-		'Nombre Desconocido 13',
-		'Nombre Desconocido 14', 
-		'Nombre Desconocido 15',
-		'Nombre Desconocido 16'
+		'Rodrigo Sebastian Rea Barreto'
 		]; 
 		let canvas=document.getElementById("idcanvas");
 		let context=canvas.getContext("2d");
@@ -65,7 +49,7 @@
 			context.translate(center,center);
 			context.rotate(3*2*Math.PI/(5*array_colaboradores.length)+i*2*Math.PI/array_colaboradores.length);
 			context.translate(-center,-center);
-			context.font="13px Sans Serif";
+			context.font="19px Arial center-20";
 			context.textAlign="right";
 			context.fillStyle="white";
 			context.fillText(array_colaboradores[i],canvas.width-30,center);
