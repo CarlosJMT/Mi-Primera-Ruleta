@@ -10,9 +10,82 @@
 		<div class="colaboradores">
 			<canvas id="idcanvas" width="600" height="600"></canvas>
 			<br>
-			<button onclick=""><span id="">Sortear</span></button>
+			<button onclick="sortear();"><span id="idEstado">Sortear</span></button>
 			<div class="mark-winner"></div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		const array_colaboradores=
+		[
+		'Carlos Jose Mera Ticona',
+		'Carlos Alberto Mera Ticona',
+		'Alex Percy Ordaya Flores',
+		'Alex Cesar Taquila Camasca',
+		'Carlos Jose Mera Ticona',
+		'Rodrigo Sebastian Rea Barreto'
+		]; 
+		let canvas=document.getElementById("idcanvas");
+		let context=canvas.getContext("2d");
+		let center=canvas.width/2;
+
+		//Agregamos un borde negro para la Ruleta
+		context.beginPath();
+		context.moveTo(center,center);
+		context.arc(center,center,center-10,0,2*Math.PI);
+		context.lineTo(center,center);
+		context.fillStyle='black';
+		context.fill();
+		
+		for (var i = 0; i < array_colaboradores.length; i++) {
+			context.beginPath();
+			context.moveTo(center,center);
+			context.arc(center,center,center-20,i*2*Math.PI/array_colaboradores.length,(i+1)*2*Math.PI/array_colaboradores.length);
+			context.lineTo(center,center);
+			context.fillStyle=random_color();
+			context.fill();
+
+			//Escribimos los nombres de las personas dentro de la ruleta
+			context.save();
+			context.translate(center,center);
+			context.rotate(3*2*Math.PI/(5*array_colaboradores.length)+i*2*Math.PI/array_colaboradores.length);
+			context.translate(-center,-center);
+			context.font="19px Arial center-20";
+			context.textAlign="right";
+			context.fillStyle="white";
+			context.fillText(array_colaboradores[i],canvas.width-30,center);
+			context.restore();
+		}
+
+		let pos_ini=0;
+		let clic=0;
+		let movement;
+		function sortear(){
+			if (clic==0) {
+				let canvas=document.getElementById("idcanvas");
+				movement=setInterval(function(){
+					pos_ini+=10;
+					canvas.style.transform='rotate('+pos_ini+'deg)';
+				},10);
+				clic=1;
+				document.getElementById("idEstado")="Sortear";
+			}else{
+				clearInterval(movement);
+				clic=0;
+				document.getElementById("idEstado")="Sortear";
+			}
+		}
+
+		function random_color(){
+			let ar_digit=['2','3','4','5','6','7','8','9'];
+			let color='';
+			let i=0;
+			while(i<6){
+				let pos=Math.round(Math.random()*(ar_digit.length-1));
+				color=color+''+ar_digit[pos];
+				i++;
+			}
+			return '#'+color;
+		}
+	</script>
 </body>
 </html>
