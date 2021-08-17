@@ -71,7 +71,6 @@ button{
   src: url("https://acupoftee.github.io/fonts/Clip.ttf");
 }
 
-
 .sign {
   position: absolute;
 
@@ -141,3 +140,5 @@ button{
       0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
   }
 }
+
+
